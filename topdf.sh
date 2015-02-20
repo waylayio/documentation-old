@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-function installPandocIfNeeded {
+installPandocIfNeeded () {
   echo "checking if pandoc is installed..."
   if command -v pandoc > /dev/null 2>&1 ; then
     echo "...ok"
@@ -10,7 +10,7 @@ function installPandocIfNeeded {
   fi  
 }
 
-function installPandoc {
+installPandoc () {
   echo "installing pandoc"
   if [[ $OSTYPE == darwin* ]]; then
     sudo port install pandoc pdflatex

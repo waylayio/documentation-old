@@ -41,7 +41,7 @@ convertWithMarkdownPdf () {
 installPandocIfNeeded
 #installMarkdownPdf
 
-rm *.pdf
+rm -f *.pdf
 rm -rf documentation.wiki
 rm -rf WaylayPlugins.wiki
 

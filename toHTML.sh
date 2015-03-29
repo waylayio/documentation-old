@@ -24,6 +24,7 @@ convertWithPandoc() {
   pandoc -s -S --toc -c -A documentation.wiki/Waylay-REST-API-documentation.md -o Waylay-REST-API-documentation.html
   pandoc -s -S --toc -c -A documentation.wiki/Submitting-and-fetching-data.md -o Submitting-and-fetching-data.html
   pandoc -s -S --toc -c -A WaylayPlugins.wiki/Plugin-API.md -o Plugin-API.html
+  pandoc -s -S --toc -c -A documentation.wiki/Waylay-starter’s-guide.md -o Waylay-starters-guide.html
 }
 
 convertToHTML(){
@@ -38,6 +39,10 @@ convertToHTML(){
   l=`grep -nr h1 Submitting-and-fetching-data.html | head -1 | cut -f2 -d':'`
   tail -n+$l Submitting-and-fetching-data.html | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > temp.html
   cat header.txt temp.html footer.txt > Submitting-and-fetching-data.html
+
+  l=`grep -nr h1 Waylay-starters-guide.html | head -1 | cut -f2 -d':'`
+  tail -n+$l Waylay-starters-guide.html  | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > temp.html
+  cat header.txt temp.html footer.txt > Waylay-starters-guide.html
 
   rm temp.html
 }

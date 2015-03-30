@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Waylay.io Documentation</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery.tocify.css" rel="stylesheet">
+    <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+        <link href="css/freelancer.css" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="http://www.waylay.io/favicon.png">
+    </head>
+
+    <body id="page-top" class="index">
+        
+        
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" style="padding: 0;">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+<!--                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>-->
+                <a class="navbar-brand" href="http://docs.waylay.io/">docs.waylay.io</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll selected">
+                    <a href="#">Please select</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="Waylay-REST-API-documentation.html">REST API</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="Plugin-API.html">Sensors & Actuators</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="Submitting-and-fetching-data.html">Broker & Storage</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+        
+        
+        
+        
+        
+        
+        <div class="container-fluid">
+        <div class="row-fluid" style="margin-top: 60px;">
+        <div class="col-sm-3" style=" padding-left: 0; margin-left: -15px;">
+        <div id="toc" class="tocify"></div>
+        
+        </div>
+            <div class="col-sm-9"><h1 id="architecture">Architecture</h1>
+<p>Waylay architecture is composed of the following components:</p>
+<ul>
+<li>Cloud Broker (MQTT, WebSockets and REST)</li>
+<li>Cloud Persisted Cache</li>
+<li>Inference Engine with advanced stream based correlation and formula processing</li>
+<li>REST server</li>
+<li>CEP functional nodes</li>
+<li>Waylay IDE (web based)</li>
+<li>SDK and Templates (for sensors, actuators, rules)</li>
+<li>Nodejs executor nodes</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/waylayio/documentation/master/images/architecture.png" class="img-responsive"  alt="architecture" />
+<p class="caption">architecture</p>
+</div>
+<h2 id="broker-and-cloud-persisted-cache">Broker and Cloud Persisted Cache</h2>
+<p>Broker lets you store and distribute messages. This can be performed over different protocols: HTTP, WebSockets or MQTT. By default the data is publicly available. It can be read by anybody. This is mainly to ease the testing. To keep your data private, you need to use waylay API key and secret. This will also enable both cloud storage and forwarding of your data towards waylay Inference Engine.</p>
+<h3 id="cloud-persisted-cache-rest-interface">Cloud Persisted Cache REST interface</h3>
+<p>You can always retrieve up to the last 100 data points for every resource over the REST calls. Each data point associated with resource holds information about underlying parameters (temperature, humidity etc.).</p>
+<h2 id="sdk-and-templates-sensors-actuators-rules">SDK and Templates (sensors, actuators, rules)</h2>
+<p>In waylay, sensors, actuators and rules are nothing more than small snippets of JSON files. They can be re-used between different templates. Out of the box, in PaaS offering, waylay supports only node.js based actuators and sensors (very similar approach to AWS lambda architecture). For OEM deployments, we as well provide java SDK.</p>
+<h4 id="open-source">Open source</h4>
+<p>There are many sensors, actuators and templates that we support out of the box. They are all open source and ready for use by all!</p>
+<h2 id="rest-server">REST server</h2>
+<p>Every piece of the waylay functionality is exposed over the REST interface! Among others, that includes:</p>
+<ul>
+<li>testing and creation of sensors, actuators and templates</li>
+<li>execution of actuators and sensors</li>
+<li>instantiation of tasks from templates</li>
+<li>real time updates of the rule engine outcomes together with realtime data (using HTML5 Server-Sent Events)</li>
+</ul>
+<a href="#" class="scrollup"><a href="http://docs.waylay.io/"></a></a>
+
+</div>
+        </div>
+                </div>
+     <footer class="text-center">
+
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-9 pull-right">
+                        Copyright &copy; waylay.io 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.tocify.min.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/tinynav.min.js"></script>
+    <script src="js/freelancer.js"></script>
+</body>
+
+</html>
+

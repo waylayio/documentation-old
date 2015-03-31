@@ -14,9 +14,9 @@
     <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/jquery.tocify.css" rel="stylesheet">
     <link href="css/prettify.css" type="text/css" rel="stylesheet" />
-        <link href="css/freelancer.css" rel="stylesheet">
-    
+    <link href="css/freelancer.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="http://www.waylay.io/favicon.png">
+    <link rel="stylesheet" href="css/simplemenu.css">
     </head>
 
     <body id="page-top" class="index">
@@ -37,22 +37,26 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div id="navigation">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="page-scroll selected">
-                    <a href="#">Please select</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="Waylay-REST-API-documentation.html">REST API</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="Plugin-API.html">Sensors & Actuators</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="Submitting-and-fetching-data.html">Broker & Storage</a>
-                    </li>
-                </ul>
-            </div>
+        <!-- THIS IS THE MENU --> 
+
+        <div class="mobilenav"> 
+  <li><a href="Waylay-REST-API-documentation.html">REST API</a></li> 
+  <li><a href="Plugin-API.html">Sensors & Actuators</a></li> 
+  <li><a href="Submitting-and-fetching-data.html">Broker & Storage</a></li> 
+  <li><a href="Architecture.html">Architecture</a></li> 
+  <li><a href="Waylay-starters-guide.html">Starter's Guide</a></li> 
+
+</div> 
+
+        <!-- THIS IS THE ICON --> 
+
+        <a href="javascript:void(0)" class="icon"> 
+           <div class="hamburger"> 
+             <div class="menui top-menu"></div> 
+             <div class="menui mid-menu"></div> 
+             <div class="menui bottom-menu"></div> 
+           </div> 
+        </a>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->

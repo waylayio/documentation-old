@@ -26,6 +26,7 @@ convertWithPandoc() {
   pandoc -s -S --toc -c -A WaylayPlugins.wiki/Plugin-API.md -o Plugin-API.html
   pandoc -s -S --toc -c -A documentation.wiki/Waylay-starter’s-guide.md -o Waylay-starters-guide.html
   pandoc -s -S --toc -c -A documentation.wiki/Architecture.md -o Architecture.html
+  pandoc -s -S --toc -c -A documentation.wiki/Tasks-and-Templates.md -o Tasks-and-Templates.html
 }
 
 convertToHTML(){

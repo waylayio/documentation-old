@@ -27,7 +27,7 @@ convertWithPandoc() {
   pandoc -s -S --toc -c -A documentation.wiki/Waylay-starter’s-guide.md -o Waylay-starters-guide.html
   pandoc -s -S --toc -c -A documentation.wiki/Architecture.md -o Architecture.html
   pandoc -s -S --toc -c -A documentation.wiki/Tasks-and-Templates.md -o Tasks-and-Templates.html
-   pandoc -s -S --toc -c -A documentation.wiki/Docker-image-guide.md -o Docker-image-guide.html
+  pandoc -s -S --toc -c -A documentation.wiki/Docker-image-guide.md -o Docker-image-guide.html
 }
 
 convertToHTML(){
@@ -54,6 +54,10 @@ convertToHTML(){
   l=`grep -nr h1 Docker-image-guide.html | head -1 | cut -f2 -d':'`
   tail -n+$l Docker-image-guide.html  | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > temp.html
   cat header.txt temp.html footer.txt > Docker-image-guide.html
+
+  l=`grep -nr h1 Tasks-and-Templates.html | head -1 | cut -f2 -d':'`
+  tail -n+$l Tasks-and-Templates.html | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > temp.html
+  cat header.txt temp.html footer.txt > Tasks-and-Templates.html
 
   rm temp.html
 }

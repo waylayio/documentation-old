@@ -1,6 +1,6 @@
-WAYLAY README file
+Documentation
 =============
-<h2> Documentation</h2>
+
 https://github.com/waylayio/documentation/wiki/Waylay-documentation
 
 

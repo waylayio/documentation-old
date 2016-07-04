@@ -70,12 +70,15 @@ listAndCommit(){
   cd "${WORKDIR}"
   git status
 
-  read -p "Do you wish to commit the changes? (y/N)" -n 1 -r
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-    git commit -a -m "documentation rebuild"
-    git push
+  if [[ `git status --porcelain` ]]; then
+    # there are changes
+    read -p "Do you wish to commit the changes? (y/N)" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      git commit -a -m "documentation rebuild"
+      git push
+    fi
   fi
 }
 

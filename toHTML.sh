@@ -15,7 +15,8 @@ installPandocIfNeeded () {
 installPandoc () {
   echo "installing pandoc"
   if [[ $OSTYPE == darwin* ]]; then
-    sudo port install pandoc
+    //sudo port install pandoc
+    brew install pandoc
   else
     sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-latex-extra
   fi
@@ -61,11 +62,11 @@ convertToHTML(){
   tail -n+$l "${WORKDIR}Tasks-and-Templates.html" | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > "${WORKDIR}temp.html"
   cat header.txt "${WORKDIR}temp.html" footer.txt > "${WORKDIR}Tasks-and-Templates.html"
 
-  rm ${WORKDIR}temp.html
+  rm "${WORKDIR}temp.html"
 }
 
 listAndCommit(){
-  cd ${WORKDIR}
+  cd "${WORKDIR}"
   git status
 
   read -p "Do you wish to commit the changes? (y/N)" -n 1 -r
@@ -78,16 +79,16 @@ listAndCommit(){
 }
 
 installPandocIfNeeded
-#installMarkdownPdf
 
-rm -rf site
+echo "removing ${WORKDIR}"
+rm -rf "${WORKDIR}"
 echo "checking out the current site"
 mkdir "${WORKDIR}"
 git clone git@github.com:waylayio/docs_site.git "${WORKDIR}"
 
+echo "checking out wikis"
 rm -rf documentation.wiki
 rm -rf WaylayPlugins.wiki
-
 git clone https://github.com/waylayio/documentation.wiki.git
 git clone https://github.com/waylayio/WaylayPlugins.wiki.git
 

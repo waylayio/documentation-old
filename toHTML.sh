@@ -43,7 +43,7 @@ convertToHTML(){
 
   l=`grep -nr h1 "${WORKDIR}Submitting-and-fetching-data.html" | head -1 | cut -f2 -d':'`
   tail -n+$l "${WORKDIR}Submitting-and-fetching-data.html" | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > "${WORKDIR}temp.html"
-  cat header.txt "${WORKDIR}temp.html" footer.txt > ${WORKDIR}Submitting-and-fetching-data.html
+  cat header.txt "${WORKDIR}temp.html" footer.txt > "${WORKDIR}Submitting-and-fetching-data.html"
 
   l=`grep -nr h1 "${WORKDIR}Waylay-starters-guide.html" | head -1 | cut -f2 -d':'`
   tail -n+$l "${WORKDIR}Waylay-starters-guide.html"  | sed 's/\[TOC\]//g' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  | sed 's/.png"/.png" class="img-responsive" /g' > "${WORKDIR}temp.html"

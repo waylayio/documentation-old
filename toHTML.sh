@@ -10,7 +10,7 @@ installPandocIfNeeded () {
     echo "...ok"
   else
     installPandoc
-  fi  
+  fi
 }
 
 installPandoc () {
@@ -100,3 +100,5 @@ rm -rf documentation.wiki
 rm -rf WaylayPlugins.wiki
 
 listAndCommit
+
+echo "done"

@@ -10,5 +10,5 @@ aws --color=auto \
   --exclude=".DS_Store" \
   --exclude=".git" \
   --exclude="less/*" \
-  --region "eu-central-1" \
+  --region "us-east-1" \
   s3 cp site s3://docs.waylay.io/
